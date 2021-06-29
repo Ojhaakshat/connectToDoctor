@@ -1,7 +1,7 @@
 // const socket = io("/");
 let messagetype = document.getElementById('type_message');
 let btn = document.getElementById('send');
-let message = document.getElementById('message');
+let message = document.getElementsByClassName('messages');
 
 
 btn.addEventListener('click',(e)=>{

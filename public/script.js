@@ -1,6 +1,5 @@
 var socket = io();
-const vidoGrid = document.getElementById("vido-grid");
-
+const videoGrid = document.getElementById("video-grid")
 const user = prompt("Enter Your Good Name");
 const peer = new Peer(undefined, {
     path: "/peerjs",
