@@ -1,11 +1,12 @@
 // const socket = io("/");
 let messagetype = document.getElementById('type_message');
 let btn = document.getElementById('send');
-let message = document.getElementById('message');
+let message = document.getElementsByClassName('messages');
 
 
 btn.addEventListener('click',(e)=>{
     if(messagetype.value.length!=0){
+        console.log(messagetype.value);
         socket.emit('message',messagetype.value);
         messagetype.value = "";
     }
@@ -14,6 +15,7 @@ btn.addEventListener('click',(e)=>{
 
 messagetype.addEventListener('keydown',(e)=>{
     if(e.key === "Enter" && messagetype.value.length!==0){
+        console.log(messagetype.value);
         socket.emit('message',messagetype.value);
         messagetype.value = "";
     }
@@ -59,6 +61,7 @@ socket.on('createMessage',(message,userName) => {
         }</span> </b>
         <span>${message}</span>
     </div>`;
+    console.log('weve received')
 });
 
 

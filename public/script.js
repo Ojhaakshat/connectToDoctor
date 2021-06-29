@@ -1,12 +1,17 @@
-var socket = io();
-const videoGrid = document.getElementById("vido-grid");
+var socket = io.connect('http://localhost:3000');
+const videoGrid = document.getElementById("video-grid");
 
 const user = prompt("Enter Your Good Name");
+
+console.log('server peer declare');
+
 const peer = new Peer(undefined, {
-    path: "/peerjs",
-    host: "/",
-    port: "3000",
+  host: 'localhost',
+  port: 3000,
+  path: '/'
 });
+
+console.log('server peer d');
 
 const myVideo = document.createElement("video");
 let myVideoStream;
@@ -36,9 +41,18 @@ navigator.mediaDevices
     });  
   });
 
+  // co/rver peer d');
+
+// hum initially yahan hai 
+// neeche dekh ek key printednhai 
+
 peer.on("open", (id) => {
+    console.log('room id is',ROOM_ID);
     socket.emit("join-room", ROOM_ID, id, user);
 });
+
+// console.log('server peer d');
+
 
 const connectToNewUser = (userId, stream) => {
     const call = peer.call(userId, stream);
@@ -48,6 +62,8 @@ const connectToNewUser = (userId, stream) => {
     });
 };
 
+// console.log('server peer d');
+
 
 const addVideoStream = (video, stream) => {
   video.srcObject = stream;
@@ -56,3 +72,6 @@ const addVideoStream = (video, stream) => {
     videoGrid.append(video);
   });
 };
+
+
+// console.log('server peer d');
