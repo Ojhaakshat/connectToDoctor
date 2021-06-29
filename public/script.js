@@ -30,13 +30,21 @@ navigator.mediaDevices
         } else {
             console.log("call denied");
         }
-      
-    });    
+    });  
+    socket.on("user-connected", (userId) => {
+        connectToNewUser(userId, stream);
+    });  
   });
 peer.on("open", (id) => {
     socket.emit("join-room", ROOM_ID, id, user);
 });
-
+const connectToNewUser = (userId, stream) => {
+    const call = peer.call(userId, stream);
+    const video = document.createElement("video");
+    call.on("stream", (userVideoStream) => {
+      addVideoStream(video, userVideoStream);
+    });
+};
 const addVideoStream = (video, stream) => {
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
