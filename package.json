@@ -1,0 +1,27 @@
+{
+  "name": "connecttodoctor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ojhaakshat/connectToDoctor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ojhaakshat/connectToDoctor/issues"
+  },
+  "homepage": "https://github.com/Ojhaakshat/connectToDoctor#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "socket.io": "^4.1.2",
+    "uuid": "^8.3.2"
+  }
+}
