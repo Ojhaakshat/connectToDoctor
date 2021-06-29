@@ -12,7 +12,7 @@ var io = socketIO(server);
 const { ExpressPeerServer } = require('peer');
 const peerServer = ExpressPeerServer(server, {
     path: '/'
-//   });
+  });
    
 app.use('/peerjs', peerServer);
 
