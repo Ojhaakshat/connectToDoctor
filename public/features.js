@@ -1,5 +1,5 @@
-
-let messagetype = document.getElementById('type-message');
+// const socket = io("/");
+let messagetype = document.getElementById('type_message');
 let btn = document.getElementById('send');
 let message = document.getElementById('message');
 
