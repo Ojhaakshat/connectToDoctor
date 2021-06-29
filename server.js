@@ -8,7 +8,13 @@ var server = app.listen(PORT,function(){
             });
 var socketIO = require("socket.io");
 var io = socketIO(server);
-                
+              
+const { ExpressPeerServer } = require("peer");
+const peerServer = ExpressPeerServer(server, {
+  debug: true,
+});
+
+app.use("/peerjs", peerServer);
 
 app.set('view engine','ejs');
 app.use(express.static('public'));
